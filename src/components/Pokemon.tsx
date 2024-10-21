@@ -10,23 +10,23 @@ export const Pokemon = () =>
     const status = useSelector((state: InitialStateType) => state.status);
 
     return (
-        <>
+        <main>
             {status!=="idle" && (
                 status === "loading" ? 
                     <>
                         <h1 className="loader-title">Obteniendo datos de tú pokemon</h1>
                         <span className="loader"></span>
                     </> :
-                    <main className="pokemon-card">
+                    <div className="pokemon-card">
                         
                         <h1 className="pokemon-name">{name}</h1>
                         <h2 className="pokemon-number">{id}</h2>
 
                         <img src={image} className="pokemon-img" />
-                    </main>
+                    </div>
                 )         
         }    
             <button className="pokemon-button" onClick={() => getPokemonData(dispatch)}>Buscar datos de un Pokemon</button>            
-        </> 
+        </main> 
     )
 }
